@@ -271,10 +271,6 @@ function FloorPlanSection() {
   );
 }
 
-function Scarcity() {
-  return ScarcityImpl();
-}
-
 function Gallery() {
   const images = [
     { src: realGaragem1, alt: "Garagem coberta ampla", span: "md:col-span-2 md:row-span-2" },
