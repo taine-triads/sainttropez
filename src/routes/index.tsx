@@ -352,10 +352,6 @@ function Scarcity() {
   );
 }
 
-function ScheduleForm() {
-  return <ScheduleFormImpl />;
-}
-
 function LiveCounter() {
   // Countdown to a fixed deadline (7 days from first visit, persisted)
   const [now, setNow] = useState<number>(() => Date.now());
