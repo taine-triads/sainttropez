@@ -3,6 +3,7 @@ import { useState } from "react";
 import heroBuilding from "@/assets/hero-building.jpg";
 import interiorLiving from "@/assets/interior-living.jpg";
 import floorPlan from "@/assets/floor-plan.jpg";
+import sbDuoLogo from "@/assets/sb-duo-logo.avif";
 
 const WHATSAPP_NUMBER = "5541999999999";
 const WHATSAPP_MSG = encodeURIComponent(
