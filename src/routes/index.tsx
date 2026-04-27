@@ -8,6 +8,7 @@ import realGaragem1 from "@/assets/real-garagem-1.jpg";
 import realGaragem2 from "@/assets/real-garagem-2.jpg";
 import realBicicletario from "@/assets/real-bicicletario.jpg";
 import realPlayground from "@/assets/real-playground.jpg";
+import realGaragem3 from "@/assets/real-garagem-3.jpg";
 
 const WHATSAPP_NUMBER = "5541999999999";
 const WHATSAPP_MSG = encodeURIComponent(
