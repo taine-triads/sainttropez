@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import heroBuilding from "@/assets/hero-building.jpg";
 import floorPlan from "@/assets/floor-plan.jpg";
 import sbDuoLogo from "@/assets/sb-duo-logo.avif";
@@ -347,6 +347,7 @@ function ScarcityImpl() {
               O Saint Tropez está prestes a esgotar. Apenas duas famílias terão o privilégio
               de chamar este endereço de lar. Reserve agora a sua visita exclusiva.
             </p>
+            <LiveCounter />
           </div>
           <ScheduleForm />
         </div>
