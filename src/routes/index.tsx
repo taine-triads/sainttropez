@@ -271,10 +271,6 @@ function FloorPlanSection() {
   );
 }
 
-function Scarcity() {
-  return ScarcityImpl();
-}
-
 function Gallery() {
   const images = [
     { src: realGaragem1, alt: "Garagem coberta ampla", span: "md:col-span-2 md:row-span-2" },
@@ -320,7 +316,7 @@ function Gallery() {
   );
 }
 
-function ScarcityImpl() {
+function Scarcity() {
   return (
     <section id="agendar" className="bg-background py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6 md:px-12">
@@ -354,10 +350,6 @@ function ScarcityImpl() {
       </div>
     </section>
   );
-}
-
-function ScheduleForm() {
-  return <ScheduleFormImpl />;
 }
 
 function LiveCounter() {
@@ -444,7 +436,7 @@ function LiveCounter() {
   );
 }
 
-function ScheduleFormImpl() {
+function ScheduleForm() {
   const [submitted, setSubmitted] = useState(false);
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
