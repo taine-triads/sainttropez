@@ -214,10 +214,10 @@ function FloorPlanSection() {
           </p>
           <ul className="mt-8 space-y-3 text-sm text-white/80">
             {[
-              "Pé-direito generoso e janelas amplas",
-              "Acabamento em mármore e detalhes em latão",
-              "Cozinha integrada com bancada gourmet",
-              "Sacada com vista privilegiada",
+              "Sacada gourmet com churrasqueira",
+              "Acabamentos em porcelanato e detalhes em azul cobalto",
+              "Vista aberta para a vizinhança arborizada",
+              "Excelente ventilação e iluminação natural",
             ].map((i) => (
               <li key={i} className="flex items-center gap-3">
                 <span className="h-1 w-1 rotate-45 bg-gold" />
@@ -228,8 +228,8 @@ function FloorPlanSection() {
         </div>
         <div className="relative">
           <img
-            src={interiorLiving}
-            alt="Living integrado de luxo do apartamento Saint Tropez"
+            src={realSacada}
+            alt="Sacada gourmet do apartamento Residencial Saint Tropez"
             width={1600}
             height={1100}
             loading="lazy"
