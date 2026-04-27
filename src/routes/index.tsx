@@ -1,9 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import heroBuilding from "@/assets/hero-building.jpg";
-import interiorLiving from "@/assets/interior-living.jpg";
 import floorPlan from "@/assets/floor-plan.jpg";
 import sbDuoLogo from "@/assets/sb-duo-logo.avif";
+import realSacada from "@/assets/real-sacada.jpg";
+import realGaragem1 from "@/assets/real-garagem-1.jpg";
+import realGaragem2 from "@/assets/real-garagem-2.jpg";
+import realBicicletario from "@/assets/real-bicicletario.jpg";
+import realPlayground from "@/assets/real-playground.jpg";
 
 const WHATSAPP_NUMBER = "5541999999999";
 const WHATSAPP_MSG = encodeURIComponent(
@@ -63,6 +67,7 @@ function Landing() {
       <Hero />
       <Highlights />
       <FloorPlanSection />
+      <Gallery />
       <Scarcity />
       <Location />
       <Footer />
