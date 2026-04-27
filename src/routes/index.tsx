@@ -1,9 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import heroBuilding from "@/assets/hero-building.jpg";
-import interiorLiving from "@/assets/interior-living.jpg";
 import floorPlan from "@/assets/floor-plan.jpg";
 import sbDuoLogo from "@/assets/sb-duo-logo.avif";
+import realSacada from "@/assets/real-sacada.jpg";
+import realGaragem1 from "@/assets/real-garagem-1.jpg";
+import realGaragem2 from "@/assets/real-garagem-2.jpg";
+import realBicicletario from "@/assets/real-bicicletario.jpg";
+import realPlayground from "@/assets/real-playground.jpg";
+import realGaragem3 from "@/assets/real-garagem-3.jpg";
 
 const WHATSAPP_NUMBER = "5541999999999";
 const WHATSAPP_MSG = encodeURIComponent(
@@ -63,6 +68,7 @@ function Landing() {
       <Hero />
       <Highlights />
       <FloorPlanSection />
+      <Gallery />
       <Scarcity />
       <Location />
       <Footer />
@@ -209,10 +215,10 @@ function FloorPlanSection() {
           </p>
           <ul className="mt-8 space-y-3 text-sm text-white/80">
             {[
-              "Pé-direito generoso e janelas amplas",
-              "Acabamento em mármore e detalhes em latão",
-              "Cozinha integrada com bancada gourmet",
-              "Sacada com vista privilegiada",
+              "Sacada gourmet com churrasqueira",
+              "Acabamentos em porcelanato e detalhes em azul cobalto",
+              "Vista aberta para a vizinhança arborizada",
+              "Excelente ventilação e iluminação natural",
             ].map((i) => (
               <li key={i} className="flex items-center gap-3">
                 <span className="h-1 w-1 rotate-45 bg-gold" />
@@ -223,8 +229,8 @@ function FloorPlanSection() {
         </div>
         <div className="relative">
           <img
-            src={interiorLiving}
-            alt="Living integrado de luxo do apartamento Saint Tropez"
+            src={realSacada}
+            alt="Sacada gourmet do apartamento Residencial Saint Tropez"
             width={1600}
             height={1100}
             loading="lazy"
@@ -266,6 +272,55 @@ function FloorPlanSection() {
 }
 
 function Scarcity() {
+  return ScarcityImpl();
+}
+
+function Gallery() {
+  const images = [
+    { src: realGaragem1, alt: "Garagem coberta ampla", span: "md:col-span-2 md:row-span-2" },
+    { src: realBicicletario, alt: "Bicicletário exclusivo dos moradores", span: "" },
+    { src: realPlayground, alt: "Playground infantil ao ar livre", span: "" },
+    { src: realGaragem2, alt: "Vagas de garagem demarcadas", span: "" },
+    { src: realGaragem3, alt: "Acesso interno da garagem", span: "" },
+  ];
+  return (
+    <section className="bg-background py-24 md:py-32">
+      <div className="mx-auto max-w-7xl px-6 md:px-12">
+        <div className="mx-auto max-w-2xl text-center">
+          <span className="text-[11px] uppercase tracking-luxury text-gold">
+            Áreas Comuns
+          </span>
+          <h2 className="mt-4 font-serif text-3xl text-navy-deep md:text-5xl">
+            Estrutura completa para o <em className="text-gold">seu dia a dia</em>.
+          </h2>
+          <GoldDivider />
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            Garagem coberta, bicicletário, playground e áreas pensadas para o
+            conforto de toda a família.
+          </p>
+        </div>
+        <div className="mt-16 grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
+          {images.map((img) => (
+            <div
+              key={img.alt}
+              className={`group relative overflow-hidden bg-secondary ${img.span}`}
+            >
+              <img
+                src={img.src}
+                alt={img.alt}
+                loading="lazy"
+                className="aspect-[4/3] h-full w-full object-cover transition duration-700 group-hover:scale-105"
+              />
+              <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-navy-deep/5" />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ScarcityImpl() {
   return (
     <section id="agendar" className="bg-background py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6 md:px-12">
