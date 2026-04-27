@@ -436,7 +436,7 @@ function LiveCounter() {
   );
 }
 
-function ScheduleFormImpl() {
+function ScheduleForm() {
   const [submitted, setSubmitted] = useState(false);
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
