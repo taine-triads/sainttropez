@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import heroBuilding from "@/assets/hero-building.jpg";
 import floorPlan from "@/assets/floor-plan.jpg";
 import sbDuoLogo from "@/assets/sb-duo-logo.avif";
@@ -347,6 +347,7 @@ function ScarcityImpl() {
               O Saint Tropez está prestes a esgotar. Apenas duas famílias terão o privilégio
               de chamar este endereço de lar. Reserve agora a sua visita exclusiva.
             </p>
+            <LiveCounter />
           </div>
           <ScheduleForm />
         </div>
@@ -356,6 +357,94 @@ function ScarcityImpl() {
 }
 
 function ScheduleForm() {
+  return <ScheduleFormImpl />;
+}
+
+function LiveCounter() {
+  // Countdown to a fixed deadline (7 days from first visit, persisted)
+  const [now, setNow] = useState<number>(() => Date.now());
+  const [deadline] = useState<number>(() => {
+    if (typeof window === "undefined") return Date.now() + 7 * 86400_000;
+    const KEY = "st_deadline";
+    const stored = window.localStorage.getItem(KEY);
+    if (stored) {
+      const n = Number(stored);
+      if (!Number.isNaN(n) && n > Date.now()) return n;
+    }
+    const d = Date.now() + 7 * 86400_000;
+    window.localStorage.setItem(KEY, String(d));
+    return d;
+  });
+
+  const [viewers, setViewers] = useState<number>(() => 8 + Math.floor(Math.random() * 6));
+
+  useEffect(() => {
+    const t = setInterval(() => setNow(Date.now()), 1000);
+    const v = setInterval(() => {
+      setViewers((prev) => {
+        const delta = Math.random() > 0.5 ? 1 : -1;
+        const next = prev + delta;
+        return Math.min(17, Math.max(6, next));
+      });
+    }, 4000);
+    return () => {
+      clearInterval(t);
+      clearInterval(v);
+    };
+  }, []);
+
+  const diff = Math.max(0, deadline - now);
+  const days = Math.floor(diff / 86400_000);
+  const hours = Math.floor((diff % 86400_000) / 3600_000);
+  const minutes = Math.floor((diff % 3600_000) / 60_000);
+  const seconds = Math.floor((diff % 60_000) / 1000);
+  const pad = (n: number) => String(n).padStart(2, "0");
+
+  const blocks = [
+    { label: "Dias", value: pad(days) },
+    { label: "Horas", value: pad(hours) },
+    { label: "Min", value: pad(minutes) },
+    { label: "Seg", value: pad(seconds) },
+  ];
+
+  return (
+    <div className="mt-10 border border-gold/40 bg-secondary/40 p-6">
+      <div className="flex items-center gap-2">
+        <span className="relative flex h-2 w-2">
+          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-destructive opacity-75" />
+          <span className="relative inline-flex h-2 w-2 rounded-full bg-destructive" />
+        </span>
+        <span className="text-[10px] uppercase tracking-luxury text-navy-deep">
+          Oferta encerra em
+        </span>
+      </div>
+      <div className="mt-4 grid grid-cols-4 gap-2 md:gap-3">
+        {blocks.map((b) => (
+          <div
+            key={b.label}
+            className="flex flex-col items-center bg-navy-deep py-3 text-white md:py-4"
+          >
+            <span className="font-serif text-2xl leading-none tabular-nums md:text-4xl">
+              {b.value}
+            </span>
+            <span className="mt-1 text-[9px] uppercase tracking-luxury text-gold/80">
+              {b.label}
+            </span>
+          </div>
+        ))}
+      </div>
+      <div className="mt-5 flex items-center justify-between border-t border-gold/20 pt-4 text-[11px] text-muted-foreground">
+        <span className="flex items-center gap-2">
+          <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-gold" />
+          <span className="tabular-nums">{viewers}</span> pessoas vendo agora
+        </span>
+        <span className="uppercase tracking-luxury text-gold">2 de 18 restantes</span>
+      </div>
+    </div>
+  );
+}
+
+function ScheduleFormImpl() {
   const [submitted, setSubmitted] = useState(false);
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
