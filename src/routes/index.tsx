@@ -236,14 +236,14 @@ function FloorPlanSection() {
 
       <div className="mx-auto mt-24 grid max-w-7xl gap-16 px-6 md:grid-cols-2 md:items-center md:px-12">
         <div className="order-2 md:order-1 relative">
-          <div className="bg-white p-6 shadow-luxury">
+          <div className="bg-white p-4 md:p-6 shadow-luxury">
             <img
               src={floorPlan}
-              alt="Planta baixa do apartamento de 3 quartos do Residencial Saint Tropez"
-              width={1400}
-              height={1000}
+              alt="Planta mobiliada do apartamento de 3 quartos do Residencial Saint Tropez"
+              width={1920}
+              height={1200}
               loading="lazy"
-              className="w-full object-contain"
+              className="w-full h-auto object-contain"
             />
           </div>
         </div>
@@ -400,7 +400,14 @@ function Location() {
           <span className="text-[10px] uppercase tracking-luxury text-muted-foreground">
             Realização
           </span>
-          <span className="font-serif text-3xl text-navy-deep">SB Duo</span>
+          <img
+            src={sbDuoLogo}
+            alt="SB Duo - Construtora"
+            width={200}
+            height={80}
+            loading="lazy"
+            className="h-16 w-auto object-contain"
+          />
           <span className="text-[10px] uppercase tracking-luxury text-gold">
             Construindo Patrimônio
           </span>
@@ -416,6 +423,14 @@ function Footer() {
       <div className="mx-auto grid max-w-7xl gap-12 px-6 md:grid-cols-3 md:px-12">
         <div>
           <span className="font-serif text-2xl text-white">Saint Tropez</span>
+          <img
+            src={sbDuoLogo}
+            alt="SB Duo"
+            width={140}
+            height={56}
+            loading="lazy"
+            className="mt-4 h-10 w-auto object-contain brightness-0 invert opacity-80"
+          />
           <p className="mt-4 text-sm font-light leading-relaxed text-white/60">
             Residencial de alto padrão em Pinhais — PR. Realização SB Duo.
           </p>
