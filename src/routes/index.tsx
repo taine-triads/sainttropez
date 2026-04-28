@@ -189,7 +189,7 @@ function Highlights() {
           {items.map((it) => (
             <div
               key={it.n}
-              className="group relative overflow-hidden rounded-sm border border-border bg-background p-10 shadow-soft transition-all duration-500 hover:-translate-y-1 hover:border-gold hover:shadow-luxury md:p-12"
+              className="group gradient-navy relative overflow-hidden rounded-sm border border-navy-deep p-10 text-white shadow-soft transition-all duration-500 hover:-translate-y-1 hover:border-gold hover:shadow-luxury md:p-12"
             >
               {/* Gold corner accent */}
               <div className="absolute right-0 top-0 h-24 w-24 -translate-y-12 translate-x-12 rotate-45 bg-gradient-to-br from-gold to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-30" />
@@ -206,11 +206,11 @@ function Highlights() {
                     {it.n}
                   </span>
                 </div>
-                <h3 className="font-serif text-3xl text-navy-deep md:text-4xl">
+                <h3 className="font-serif text-3xl text-white md:text-4xl">
                   {it.title}
                 </h3>
                 <div className="h-px w-12 bg-gold transition-all duration-500 group-hover:w-24" />
-                <p className="text-base leading-relaxed text-muted-foreground">
+                <p className="text-base leading-relaxed text-white/80">
                   {it.desc}
                 </p>
               </div>
