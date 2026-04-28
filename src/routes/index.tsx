@@ -203,7 +203,7 @@ function Highlights() {
                     {it.icon}
                   </span>
                   <span className="text-[11px] uppercase tracking-luxury text-gold">
-                    Item {it.n}
+                    {it.n}
                   </span>
                 </div>
                 <h3 className="font-serif text-3xl text-navy-deep md:text-4xl">
