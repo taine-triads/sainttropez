@@ -151,26 +151,31 @@ function Highlights() {
       n: "01",
       title: "Apartamentos Tipo",
       desc: "3 quartos espaçosos com suíte master, projetados para o conforto absoluto da família.",
+      icon: "◆",
     },
     {
       n: "02",
       title: "Living Integrado",
       desc: "Ampla área social integrando sala de jantar e estar para receber com elegância.",
+      icon: "❖",
     },
     {
       n: "03",
       title: "Layout Inteligente",
       desc: "Planta mobiliada que demonstra excelente circulação e aproveitamento de cada metro.",
+      icon: "✦",
     },
     {
       n: "04",
       title: "Privacidade Absoluta",
       desc: "Apenas três unidades por pavimento tipo, garantindo silêncio e exclusividade total.",
+      icon: "☗",
     },
   ];
   return (
-    <section className="bg-background py-24 md:py-32">
-      <div className="mx-auto max-w-7xl px-6 md:px-12">
+    <section className="relative overflow-hidden bg-secondary py-24 md:py-32">
+      <div className="pointer-events-none absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "radial-gradient(circle at 20% 20%, var(--gold) 0%, transparent 50%), radial-gradient(circle at 80% 80%, var(--navy) 0%, transparent 50%)" }} />
+      <div className="relative mx-auto max-w-7xl px-6 md:px-12">
         <div className="mx-auto max-w-2xl text-center">
           <span className="text-[11px] uppercase tracking-luxury text-gold">
             O Empreendimento
@@ -180,15 +185,35 @@ function Highlights() {
           </h2>
           <GoldDivider />
         </div>
-        <div className="mt-16 grid gap-px bg-border md:grid-cols-2">
+        <div className="mt-20 grid gap-8 md:grid-cols-2 lg:gap-10">
           {items.map((it) => (
             <div
               key={it.n}
-              className="group flex flex-col gap-4 bg-background p-10 transition hover:bg-secondary"
+              className="group relative overflow-hidden rounded-sm border border-border bg-background p-10 shadow-soft transition-all duration-500 hover:-translate-y-1 hover:border-gold hover:shadow-luxury md:p-12"
             >
-              <span className="font-serif text-xl text-gold">{it.n}</span>
-              <h3 className="font-serif text-2xl text-navy-deep">{it.title}</h3>
-              <p className="text-sm leading-relaxed text-muted-foreground">{it.desc}</p>
+              {/* Gold corner accent */}
+              <div className="absolute right-0 top-0 h-24 w-24 -translate-y-12 translate-x-12 rotate-45 bg-gradient-to-br from-gold to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-30" />
+              {/* Big background number */}
+              <span className="pointer-events-none absolute -bottom-6 -right-2 font-serif text-[8rem] leading-none text-gold/10 transition-all duration-500 group-hover:text-gold/20 md:text-[10rem]">
+                {it.n}
+              </span>
+              <div className="relative flex flex-col gap-5">
+                <div className="flex items-center gap-4">
+                  <span className="flex h-14 w-14 items-center justify-center rounded-full border border-gold/40 bg-gold/5 text-2xl text-gold transition-all duration-500 group-hover:border-gold group-hover:bg-gold group-hover:text-navy-deep">
+                    {it.icon}
+                  </span>
+                  <span className="text-[11px] uppercase tracking-luxury text-gold">
+                    Item {it.n}
+                  </span>
+                </div>
+                <h3 className="font-serif text-3xl text-navy-deep md:text-4xl">
+                  {it.title}
+                </h3>
+                <div className="h-px w-12 bg-gold transition-all duration-500 group-hover:w-24" />
+                <p className="text-base leading-relaxed text-muted-foreground">
+                  {it.desc}
+                </p>
+              </div>
             </div>
           ))}
         </div>
