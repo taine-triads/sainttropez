@@ -29,18 +29,14 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Residencial Saint Tropez" },
-      { name: "description", content: "Luxury real estate landing page for Residencial Saint Tropez, selling the last 2 exclusive units." },
+      { title: "Lovable App" },
+      { name: "description", content: "Lovable Generated Project" },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Residencial Saint Tropez" },
-      { property: "og:description", content: "Luxury real estate landing page for Residencial Saint Tropez, selling the last 2 exclusive units." },
+      { property: "og:title", content: "Lovable App" },
+      { property: "og:description", content: "Lovable Generated Project" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "Residencial Saint Tropez" },
-      { name: "twitter:description", content: "Luxury real estate landing page for Residencial Saint Tropez, selling the last 2 exclusive units." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e9de70ac-dc48-41c0-820c-be1d52c4c423/id-preview-1619bbe7--1925e623-3c7d-4d01-a475-bff8a817894e.lovable.app-1777464618696.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e9de70ac-dc48-41c0-820c-be1d52c4c423/id-preview-1619bbe7--1925e623-3c7d-4d01-a475-bff8a817894e.lovable.app-1777464618696.png" },
     ],
     links: [
       {
