@@ -10,7 +10,7 @@ import realBicicletario from "@/assets/real-bicicletario.jpg";
 import realPlayground from "@/assets/real-playground.jpg";
 import realGaragem3 from "@/assets/real-garagem-3.jpg";
 
-const WHATSAPP_NUMBER = "5541999999999";
+const WHATSAPP_NUMBER = "5541991812026";
 const WHATSAPP_MSG = encodeURIComponent(
   "Olá! Tenho interesse em conhecer o Residencial Saint Tropez em Pinhais. Gostaria de falar com um consultor."
 );
@@ -601,7 +601,7 @@ function Footer() {
           <ul className="mt-4 space-y-2 text-sm font-light text-white/70">
             <li>
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="hover:text-gold">
-                WhatsApp: (41) 99999-9999
+                WhatsApp: (41) 99181-2026
               </a>
             </li>
             <li>contato@sbduo.com.br</li>
